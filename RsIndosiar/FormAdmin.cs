@@ -16,10 +16,10 @@ namespace RsIndosiar
             InitializeComponent();
         }
         int id_obat;
-        private TextBox txtDeskripsi;
+        private TextBox txtDeskripsi; 
         string connStr = "Data Source=DIAN\\NAZARIN;Initial Catalog=RsIndosiar;Integrated Security=True";
 
-        private void InitializeComponent()
+        private void InitializeComponent() 
         {
             this.txtGejala = new System.Windows.Forms.TextBox();
             this.btnTambah = new System.Windows.Forms.Button();
