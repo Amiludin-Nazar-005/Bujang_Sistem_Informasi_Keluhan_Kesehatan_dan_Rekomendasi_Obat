@@ -28,45 +28,7 @@ namespace RsIndosiar
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            SqlConnection conn = new SqlConnection(connStr);
-            conn.Open();
-
-            string query = "SELECT role FROM [User] WHERE username=@u AND password=@p";
-            SqlCommand cmd = new SqlCommand(query, conn);
-
-            cmd.Parameters.AddWithValue("@u", txtUsername.Text);
-            cmd.Parameters.AddWithValue("@p", txtPassword.Text);
-
-            SqlDataReader rd = cmd.ExecuteReader();
-
-
-            if (rd.Read())
-            {
-                string role = rd["role"].ToString();
-
-                if (role == "admin")
-                {
-                    MessageBox.Show("Login Admin");
-
-                    FormAdmin f = new FormAdmin();
-                    f.Show();
-                }
-                else
-                {
-                    MessageBox.Show("Login User");
-
-                    Dashboard f = new Dashboard();
-                    f.Show();
-                }
-
-                this.Hide();
-            }
-            else
-            {
-                MessageBox.Show("Login gagal!");
-            }
-
-            conn.Close();
+            
         }
         
 
