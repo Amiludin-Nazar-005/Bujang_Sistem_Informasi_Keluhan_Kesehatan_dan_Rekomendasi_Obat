@@ -74,13 +74,15 @@ namespace RsIndosiar
 
         private void btnDiagnosa_Click(object sender, EventArgs e)
         {
-           
+            FormDiagnosa f = new FormDiagnosa();
+            f.Show();
 
         }
 
         private void btnRiwayat_Click(object sender, EventArgs e)
         {
-            
+           
+        }
 
         private void Dashboard_Load(object sender, EventArgs e)
         {
