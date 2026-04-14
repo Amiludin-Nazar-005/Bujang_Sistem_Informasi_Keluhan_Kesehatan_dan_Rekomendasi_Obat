@@ -111,7 +111,7 @@ namespace RsIndosiar
                 conn.Open();
 
                 string keluhan = txtKeluhan.Text.ToLower();
-                string hasil = "Tidak ditemukan rekomendasi";
+                string hasil = "Tidak ditemukan rekomendasi"; 
 
                 // ambil data gejala + obat
                 string query = @"
