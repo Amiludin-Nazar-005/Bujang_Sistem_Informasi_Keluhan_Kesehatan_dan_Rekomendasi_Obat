@@ -210,7 +210,7 @@ namespace RsIndosiar
             LoadGejala();
             LoadObat();
             MessageBox.Show("Masuk Admin");
-        }
+        } 
 
         private void btnTambah_Click(object sender, EventArgs e)
         {
