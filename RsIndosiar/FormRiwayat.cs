@@ -75,7 +75,7 @@ namespace RsIndosiar
             DataTable dt = new DataTable();
             da.Fill(dt);
 
-            dataRiwayat.DataSource = dt;
+            dataRiwayat.DataSource = dt; 
         }
 
         public FormRiwayat()
