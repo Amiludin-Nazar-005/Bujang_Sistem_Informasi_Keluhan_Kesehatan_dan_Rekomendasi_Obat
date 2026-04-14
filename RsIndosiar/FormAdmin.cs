@@ -213,7 +213,7 @@ namespace RsIndosiar
         } 
 
         private void btnTambah_Click(object sender, EventArgs e)
-        {
+        { 
             SqlConnection conn = new SqlConnection(connStr);
             conn.Open();
 
