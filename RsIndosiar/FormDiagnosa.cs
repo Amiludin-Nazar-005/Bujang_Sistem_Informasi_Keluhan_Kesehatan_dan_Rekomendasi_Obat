@@ -14,7 +14,7 @@ namespace RsIndosiar
 
         public FormDiagnosa()
         {
-            InitializeComponent();
+            InitializeComponent(); 
         }
 
         private void InitializeComponent()
