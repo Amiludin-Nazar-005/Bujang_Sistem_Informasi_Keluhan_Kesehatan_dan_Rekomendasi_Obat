@@ -149,7 +149,7 @@ namespace RsIndosiar
             this.dataObat.RowHeadersWidth = 51; 
             this.dataObat.RowTemplate.Height = 24;
             this.dataObat.Size = new System.Drawing.Size(385, 183);
-            this.dataObat.TabIndex = 11;
+            this.dataObat.TabIndex = 11; 
             this.dataObat.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataObat_CellContentClick);
             // 
             // txtDeskripsi
