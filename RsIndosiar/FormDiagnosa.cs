@@ -132,7 +132,7 @@ namespace RsIndosiar
                     // cek apakah keluhan mengandung gejala
                     if (keluhan.Contains(gejala))
                     {
-                        hasil = "Disarankan: " + obat;
+                        hasil = "Disarankan: " + obat; 
                         break;
                     }
                 }
