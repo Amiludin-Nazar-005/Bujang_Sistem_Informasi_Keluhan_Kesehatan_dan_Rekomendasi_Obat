@@ -218,7 +218,7 @@ namespace RsIndosiar
             conn.Open();
 
             string query = "INSERT INTO Gejala (nama_gejala) VALUES (@g)";
-            SqlCommand cmd = new SqlCommand(query, conn);
+            SqlCommand cmd = new SqlCommand(query, conn); 
 
             cmd.Parameters.AddWithValue("@g", dataGejala.Text);
             cmd.ExecuteNonQuery();
