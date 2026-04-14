@@ -146,7 +146,7 @@ namespace RsIndosiar
             this.dataObat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataObat.Location = new System.Drawing.Point(544, 269);
             this.dataObat.Name = "dataObat";
-            this.dataObat.RowHeadersWidth = 51;
+            this.dataObat.RowHeadersWidth = 51; 
             this.dataObat.RowTemplate.Height = 24;
             this.dataObat.Size = new System.Drawing.Size(385, 183);
             this.dataObat.TabIndex = 11;
