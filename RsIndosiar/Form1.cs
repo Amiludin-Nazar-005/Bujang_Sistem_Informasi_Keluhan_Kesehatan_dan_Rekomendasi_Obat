@@ -14,6 +14,7 @@ namespace RsIndosiar
     
     public partial class Form1: Form
     {
+
         string connStr = "Data Source=DIAN\\NAZARIN;Initial Catalog=RsIndosiar;Integrated Security=True";
         public Form1()
         {
@@ -37,6 +38,7 @@ namespace RsIndosiar
             cmd.Parameters.AddWithValue("@p", txtPassword.Text);
 
             SqlDataReader rd = cmd.ExecuteReader();
+
 
             if (rd.Read())
             {

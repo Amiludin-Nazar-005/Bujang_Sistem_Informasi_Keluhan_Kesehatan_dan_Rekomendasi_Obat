@@ -8,9 +8,14 @@ using System.Windows.Forms;
 
 namespace RsIndosiar
 {
-    class FormDiagnosa : Form
+    public partial class FormDiagnosa : Form
     {
         string connStr = "Data Source=DIAN\\NAZARIN;Initial Catalog=RsIndosiar;Integrated Security=True";
+
+        public FormDiagnosa()
+        {
+            InitializeComponent();
+        }
 
         private void InitializeComponent()
         {

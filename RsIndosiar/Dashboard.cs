@@ -9,8 +9,10 @@ using System.Data.SqlClient;
 namespace RsIndosiar
 {
 
-    class Dashboard : Form
+    public partial class Dashboard : Form
     {
+        string connStr = "Data Source=DIAN\\NAZARIN;Initial Catalog=RsIndosiar;Integrated Security=True";
+
 
         private Button btnDiagnosa;
         private Button btnRiwayat;
@@ -41,6 +43,7 @@ namespace RsIndosiar
             this.btnRiwayat.TabIndex = 1;
             this.btnRiwayat.Text = "Riwayat";
             this.btnRiwayat.UseVisualStyleBackColor = true;
+            this.btnRiwayat.Click += new System.EventHandler(this.btnRiwayat_Click);
             // 
             // label1
             // 
@@ -58,15 +61,33 @@ namespace RsIndosiar
             this.Controls.Add(this.btnRiwayat);
             this.Controls.Add(this.btnDiagnosa);
             this.Name = "Dashboard";
+            this.Load += new System.EventHandler(this.Dashboard_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
+        }
+
+        public Dashboard()
+        {
+            InitializeComponent();
         }
 
         private void btnDiagnosa_Click(object sender, EventArgs e)
         {
             FormDiagnosa f = new FormDiagnosa();
             f.Show();
+
+        }
+
+        private void btnRiwayat_Click(object sender, EventArgs e)
+        {
+            FormRiwayat f = new FormRiwayat();
+            f.Show();
+        }
+
+        private void Dashboard_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
