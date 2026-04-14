@@ -58,7 +58,7 @@ namespace RsIndosiar
         private void FormRiwayat_Load(object sender, EventArgs e)
         {
             LoadRiwayat();
-        }
+        } 
 
         private void LoadRiwayat()
         {
