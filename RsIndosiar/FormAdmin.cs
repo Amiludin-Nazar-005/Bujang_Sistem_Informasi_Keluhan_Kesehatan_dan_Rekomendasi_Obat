@@ -323,7 +323,7 @@ namespace RsIndosiar
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = dataObat.Rows[e.RowIndex];
-
+                 
                 id_obat = Convert.ToInt32(row.Cells["id_obat"].Value);
                 txtObat.Text = row.Cells["nama_obat"].Value.ToString();
                 txtDeskripsi.Text = row.Cells["deskripsi"].Value.ToString();
