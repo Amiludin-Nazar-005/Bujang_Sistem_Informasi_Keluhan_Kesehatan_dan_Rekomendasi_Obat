@@ -14,7 +14,7 @@ namespace RsIndosiar
         string connStr = "Data Source=DIAN\\NAZARIN;Initial Catalog=RsIndosiar;Integrated Security=True"; 
 
 
-        private Button btnDiagnosa;
+        private Button btnDiagnosa; 
         private Button btnRiwayat;
         private Button btnLogout;
         private Button btnObat;
