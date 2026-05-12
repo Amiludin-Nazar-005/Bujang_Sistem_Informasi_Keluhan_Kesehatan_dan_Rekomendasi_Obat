@@ -15,7 +15,7 @@ namespace RsIndosiar
 
 
         private Button btnDiagnosa; 
-        private Button btnRiwayat;
+        private Button btnRiwayat; 
         private Button btnLogout;
         private Button btnObat;
         private Label label1;
