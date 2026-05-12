@@ -101,7 +101,7 @@ namespace RsIndosiar
         private void btnDiagnosa_Click(object sender, EventArgs e)
         {
             FormDiagnosa f = new FormDiagnosa();
-            f.Show();
+            f.Show(); 
 
         }
 
