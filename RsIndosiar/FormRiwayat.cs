@@ -88,7 +88,7 @@ namespace RsIndosiar
         public FormRiwayat()
         {
             InitializeComponent();
-            this.Load += FormRiwayat_Load;
+            this.Load += FormRiwayat_Load; 
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
