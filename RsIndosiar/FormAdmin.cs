@@ -535,7 +535,7 @@ namespace RsIndosiar
         private void btnUpdateObat_Click(object sender, EventArgs e)
         {
             SqlConnection conn =
-             new SqlConnection(connStr);
+             new SqlConnection(connStr); 
 
             conn.Open();
 
