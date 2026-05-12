@@ -87,6 +87,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RsIndosiarDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="RsIndosiarDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RsIndosiarDataSet1.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
@@ -136,6 +141,17 @@
     </None>
     <None Include="RsIndosiarDataSet.xss">
       <DependentUpon>RsIndosiarDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="RsIndosiarDataSet1.xsc">
+      <DependentUpon>RsIndosiarDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="RsIndosiarDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RsIndosiarDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RsIndosiarDataSet1.xss">
+      <DependentUpon>RsIndosiarDataSet1.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

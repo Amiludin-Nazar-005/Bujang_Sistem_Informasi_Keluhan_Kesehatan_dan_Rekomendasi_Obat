@@ -46,6 +46,25 @@ namespace RsIndosiar
         private RsIndosiarDataSetTableAdapters.DiagnosaTableAdapter diagnosaTableAdapter;
         private Button btnTes;
         private Button btnReset;
+        private BindingNavigator bindingNavigator2;
+        private ToolStripButton bindingNavigatorAddNewItem1;
+        private ToolStripLabel bindingNavigatorCountItem1;
+        private ToolStripButton bindingNavigatorDeleteItem1;
+        private ToolStripButton bindingNavigatorMoveFirstItem1;
+        private ToolStripButton bindingNavigatorMovePreviousItem1;
+        private ToolStripSeparator bindingNavigatorSeparator3;
+        private ToolStripTextBox bindingNavigatorPositionItem1;
+        private ToolStripSeparator bindingNavigatorSeparator4;
+        private ToolStripButton bindingNavigatorMoveNextItem1;
+        private ToolStripButton bindingNavigatorMoveLastItem1;
+        private ToolStripSeparator bindingNavigatorSeparator5;
+        private RsIndosiarDataSet1 rsIndosiarDataSet1;
+        private BindingSource obatBindingSource1;
+        private RsIndosiarDataSet1TableAdapters.ObatTableAdapter obatTableAdapter1;
+        private BindingSource obatBindingSource2;
+        private BindingSource obatBindingSource3;
+        private Button btnTestObat;
+        private Button btnResetObat;
         string connStr = "Data Source=DIAN\\NAZARIN;Initial Catalog=RsIndosiar;Integrated Security=True";
 
         private void InitializeComponent() 
@@ -85,6 +104,25 @@ namespace RsIndosiar
             this.diagnosaTableAdapter = new RsIndosiar.RsIndosiarDataSetTableAdapters.DiagnosaTableAdapter();
             this.btnTes = new System.Windows.Forms.Button();
             this.btnReset = new System.Windows.Forms.Button();
+            this.bindingNavigator2 = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorMoveFirstItem1 = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMovePreviousItem1 = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorPositionItem1 = new System.Windows.Forms.ToolStripTextBox();
+            this.bindingNavigatorCountItem1 = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorMoveNextItem1 = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveLastItem1 = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorAddNewItem1 = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorDeleteItem1 = new System.Windows.Forms.ToolStripButton();
+            this.rsIndosiarDataSet1 = new RsIndosiar.RsIndosiarDataSet1();
+            this.obatBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.obatTableAdapter1 = new RsIndosiar.RsIndosiarDataSet1TableAdapters.ObatTableAdapter();
+            this.obatBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.obatBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
+            this.btnTestObat = new System.Windows.Forms.Button();
+            this.btnResetObat = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataObat)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataDiagnosa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
@@ -92,12 +130,18 @@ namespace RsIndosiar
             ((System.ComponentModel.ISupportInitialize)(this.rsIndosiarDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.obatBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.diagnosaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator2)).BeginInit();
+            this.bindingNavigator2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.rsIndosiarDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.obatBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.obatBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.obatBindingSource3)).BeginInit();
             this.SuspendLayout();
             // 
             // txtObat
             // 
-            this.txtObat.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.obatBindingSource, "nama_obat", true));
-            this.txtObat.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.obatBindingSource, "nama_obat", true));
+            this.txtObat.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.obatBindingSource1, "nama_obat", true));
+            this.txtObat.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.obatBindingSource2, "nama_obat", true));
             this.txtObat.Location = new System.Drawing.Point(560, 74);
             this.txtObat.Name = "txtObat";
             this.txtObat.Size = new System.Drawing.Size(356, 22);
@@ -165,7 +209,7 @@ namespace RsIndosiar
             // 
             // txtDeskripsi
             // 
-            this.txtDeskripsi.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.obatBindingSource, "deskripsi", true));
+            this.txtDeskripsi.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.obatBindingSource3, "deskripsi", true));
             this.txtDeskripsi.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.obatBindingSource, "deskripsi", true));
             this.txtDeskripsi.Location = new System.Drawing.Point(560, 121);
             this.txtDeskripsi.Name = "txtDeskripsi";
@@ -398,9 +442,177 @@ namespace RsIndosiar
             this.btnReset.UseVisualStyleBackColor = false;
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
+            // bindingNavigator2
+            // 
+            this.bindingNavigator2.AddNewItem = this.bindingNavigatorAddNewItem1;
+            this.bindingNavigator2.BindingSource = this.obatBindingSource;
+            this.bindingNavigator2.CountItem = this.bindingNavigatorCountItem1;
+            this.bindingNavigator2.DeleteItem = this.bindingNavigatorDeleteItem1;
+            this.bindingNavigator2.Dock = System.Windows.Forms.DockStyle.None;
+            this.bindingNavigator2.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.bindingNavigator2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bindingNavigatorMoveFirstItem1,
+            this.bindingNavigatorMovePreviousItem1,
+            this.bindingNavigatorSeparator3,
+            this.bindingNavigatorPositionItem1,
+            this.bindingNavigatorSeparator4,
+            this.bindingNavigatorCountItem1,
+            this.bindingNavigatorMoveNextItem1,
+            this.bindingNavigatorMoveLastItem1,
+            this.bindingNavigatorSeparator5,
+            this.bindingNavigatorAddNewItem1,
+            this.bindingNavigatorDeleteItem1});
+            this.bindingNavigator2.Location = new System.Drawing.Point(510, 3);
+            this.bindingNavigator2.MoveFirstItem = this.bindingNavigatorMoveFirstItem1;
+            this.bindingNavigator2.MoveLastItem = this.bindingNavigatorMoveLastItem1;
+            this.bindingNavigator2.MoveNextItem = this.bindingNavigatorMoveNextItem1;
+            this.bindingNavigator2.MovePreviousItem = this.bindingNavigatorMovePreviousItem1;
+            this.bindingNavigator2.Name = "bindingNavigator2";
+            this.bindingNavigator2.PositionItem = this.bindingNavigatorPositionItem1;
+            this.bindingNavigator2.Size = new System.Drawing.Size(302, 27);
+            this.bindingNavigator2.TabIndex = 23;
+            this.bindingNavigator2.Text = "bindingNavigator2";
+            // 
+            // bindingNavigatorMoveFirstItem1
+            // 
+            this.bindingNavigatorMoveFirstItem1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveFirstItem1.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem1.Image")));
+            this.bindingNavigatorMoveFirstItem1.Name = "bindingNavigatorMoveFirstItem";
+            this.bindingNavigatorMoveFirstItem1.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveFirstItem1.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorMoveFirstItem1.Text = "Move first";
+            // 
+            // bindingNavigatorMovePreviousItem1
+            // 
+            this.bindingNavigatorMovePreviousItem1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMovePreviousItem1.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem1.Image")));
+            this.bindingNavigatorMovePreviousItem1.Name = "bindingNavigatorMovePreviousItem";
+            this.bindingNavigatorMovePreviousItem1.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMovePreviousItem1.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorMovePreviousItem1.Text = "Move previous";
+            // 
+            // bindingNavigatorSeparator3
+            // 
+            this.bindingNavigatorSeparator3.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator3.Size = new System.Drawing.Size(6, 27);
+            // 
+            // bindingNavigatorPositionItem1
+            // 
+            this.bindingNavigatorPositionItem1.AccessibleName = "Position";
+            this.bindingNavigatorPositionItem1.AutoSize = false;
+            this.bindingNavigatorPositionItem1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.bindingNavigatorPositionItem1.Name = "bindingNavigatorPositionItem";
+            this.bindingNavigatorPositionItem1.Size = new System.Drawing.Size(50, 27);
+            this.bindingNavigatorPositionItem1.Text = "0";
+            this.bindingNavigatorPositionItem1.ToolTipText = "Current position";
+            // 
+            // bindingNavigatorCountItem1
+            // 
+            this.bindingNavigatorCountItem1.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem1.Size = new System.Drawing.Size(45, 24);
+            this.bindingNavigatorCountItem1.Text = "of {0}";
+            this.bindingNavigatorCountItem1.ToolTipText = "Total number of items";
+            // 
+            // bindingNavigatorSeparator4
+            // 
+            this.bindingNavigatorSeparator4.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator4.Size = new System.Drawing.Size(6, 27);
+            // 
+            // bindingNavigatorMoveNextItem1
+            // 
+            this.bindingNavigatorMoveNextItem1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveNextItem1.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem1.Image")));
+            this.bindingNavigatorMoveNextItem1.Name = "bindingNavigatorMoveNextItem";
+            this.bindingNavigatorMoveNextItem1.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveNextItem1.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorMoveNextItem1.Text = "Move next";
+            // 
+            // bindingNavigatorMoveLastItem1
+            // 
+            this.bindingNavigatorMoveLastItem1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveLastItem1.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem1.Image")));
+            this.bindingNavigatorMoveLastItem1.Name = "bindingNavigatorMoveLastItem";
+            this.bindingNavigatorMoveLastItem1.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveLastItem1.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorMoveLastItem1.Text = "Move last";
+            // 
+            // bindingNavigatorSeparator5
+            // 
+            this.bindingNavigatorSeparator5.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator5.Size = new System.Drawing.Size(6, 27);
+            // 
+            // bindingNavigatorAddNewItem1
+            // 
+            this.bindingNavigatorAddNewItem1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem1.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem1.Image")));
+            this.bindingNavigatorAddNewItem1.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem1.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem1.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorAddNewItem1.Text = "Add new";
+            // 
+            // bindingNavigatorDeleteItem1
+            // 
+            this.bindingNavigatorDeleteItem1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem1.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem1.Image")));
+            this.bindingNavigatorDeleteItem1.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem1.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem1.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorDeleteItem1.Text = "Delete";
+            // 
+            // rsIndosiarDataSet1
+            // 
+            this.rsIndosiarDataSet1.DataSetName = "RsIndosiarDataSet1";
+            this.rsIndosiarDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // obatBindingSource1
+            // 
+            this.obatBindingSource1.DataMember = "Obat";
+            this.obatBindingSource1.DataSource = this.rsIndosiarDataSet1;
+            // 
+            // obatTableAdapter1
+            // 
+            this.obatTableAdapter1.ClearBeforeFill = true;
+            // 
+            // obatBindingSource2
+            // 
+            this.obatBindingSource2.DataMember = "Obat";
+            this.obatBindingSource2.DataSource = this.rsIndosiarDataSet1;
+            // 
+            // obatBindingSource3
+            // 
+            this.obatBindingSource3.DataMember = "Obat";
+            this.obatBindingSource3.DataSource = this.rsIndosiarDataSet1;
+            // 
+            // btnTestObat
+            // 
+            this.btnTestObat.BackColor = System.Drawing.Color.Red;
+            this.btnTestObat.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTestObat.Location = new System.Drawing.Point(841, 225);
+            this.btnTestObat.Name = "btnTestObat";
+            this.btnTestObat.Size = new System.Drawing.Size(75, 23);
+            this.btnTestObat.TabIndex = 24;
+            this.btnTestObat.Text = "TEST";
+            this.btnTestObat.UseVisualStyleBackColor = false;
+            this.btnTestObat.Click += new System.EventHandler(this.btnTestObat_Click);
+            // 
+            // btnResetObat
+            // 
+            this.btnResetObat.BackColor = System.Drawing.Color.Lime;
+            this.btnResetObat.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnResetObat.Location = new System.Drawing.Point(560, 225);
+            this.btnResetObat.Name = "btnResetObat";
+            this.btnResetObat.Size = new System.Drawing.Size(75, 23);
+            this.btnResetObat.TabIndex = 25;
+            this.btnResetObat.Text = "RESET";
+            this.btnResetObat.UseVisualStyleBackColor = false;
+            this.btnResetObat.Click += new System.EventHandler(this.btnResetObat_Click);
+            // 
             // FormAdmin
             // 
             this.ClientSize = new System.Drawing.Size(941, 528);
+            this.Controls.Add(this.btnResetObat);
+            this.Controls.Add(this.btnTestObat);
+            this.Controls.Add(this.bindingNavigator2);
             this.Controls.Add(this.btnReset);
             this.Controls.Add(this.btnTes);
             this.Controls.Add(this.bindingNavigator1);
@@ -428,6 +640,13 @@ namespace RsIndosiar
             ((System.ComponentModel.ISupportInitialize)(this.rsIndosiarDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.obatBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.diagnosaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator2)).EndInit();
+            this.bindingNavigator2.ResumeLayout(false);
+            this.bindingNavigator2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.rsIndosiarDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.obatBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.obatBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.obatBindingSource3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -456,6 +675,8 @@ namespace RsIndosiar
 
         private void FormAdmin_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'rsIndosiarDataSet1.Obat' table. You can move, or remove it, as needed.
+            this.obatTableAdapter1.Fill(this.rsIndosiarDataSet1.Obat);
             // TODO: This line of code loads data into the 'rsIndosiarDataSet.Diagnosa' table. You can move, or remove it, as needed.
             this.diagnosaTableAdapter.Fill(this.rsIndosiarDataSet.Diagnosa);
             // TODO: This line of code loads data into the 'rsIndosiarDataSet.Obat' table. You can move, or remove it, as needed.
@@ -753,7 +974,7 @@ namespace RsIndosiar
             "SQL Injection Berhasil!");
 
             this.BackColor =
-            Color.DarkGray;
+            Color.DarkMagenta;
         }
 
         private void btnReset_Click(object sender, EventArgs e)
@@ -765,6 +986,38 @@ namespace RsIndosiar
 
             MessageBox.Show(
             "Sistem berhasil dipulihkan!");
+        }
+
+        private void btnTestObat_Click(object sender, EventArgs e)
+        {
+            DataTable dt =
+            new DataTable();
+
+            dt.Columns.Add("STATUS");
+
+            dt.Rows.Add("⚠ DATABASE OBAT ERROR ⚠");
+            dt.Rows.Add("DATA OBAT DIRETAS");
+            dt.Rows.Add("SQL INJECTION DETECTED");
+            dt.Rows.Add("SEMUA DATA OBAT BOCOR");
+
+            dataObat.DataSource = dt;
+
+            this.BackColor =
+            Color.DarkMagenta;
+
+            MessageBox.Show(
+            "SQL Injection pada data obat berhasil!");
+        }
+
+        private void btnResetObat_Click(object sender, EventArgs e)
+        {
+            LoadObat();
+
+            this.BackColor =
+            Color.White;
+
+            MessageBox.Show(
+            "Data obat berhasil dipulihkan!");
         }
     }
     
