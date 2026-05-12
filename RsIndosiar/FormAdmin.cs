@@ -624,7 +624,7 @@ namespace RsIndosiar
         private void btnKonfirmasi_Click(object sender, EventArgs e)
         {
             SqlConnection conn =
-     new SqlConnection(connStr);
+     new SqlConnection(connStr); 
 
             conn.Open();
 
@@ -655,7 +655,7 @@ namespace RsIndosiar
             conn.Close();
 
             LoadDiagnosa();
-        }
+        } 
 
         private void dataDiagnosa_CellClick(object sender, DataGridViewCellEventArgs e)
         {
