@@ -572,7 +572,7 @@ namespace RsIndosiar
         private void btnDeleteObat_Click(object sender, EventArgs e)
         {
             SqlConnection conn =
-    new SqlConnection(connStr);
+    new SqlConnection(connStr); 
 
             conn.Open();
 
