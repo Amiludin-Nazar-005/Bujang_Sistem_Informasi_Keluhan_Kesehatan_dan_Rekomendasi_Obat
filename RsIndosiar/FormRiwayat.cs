@@ -53,29 +53,36 @@ namespace RsIndosiar
         }
 
         private Button btnRefresh;
+        private System.ComponentModel.IContainer components;
         private DataGridView dataRiwayat;
 
         private void FormRiwayat_Load(object sender, EventArgs e)
         {
             LoadRiwayat();
-        } 
+        }
 
         private void LoadRiwayat()
         {
-            SqlConnection conn = new SqlConnection(connStr);
+            SqlConnection conn =
+            new SqlConnection(connStr);
 
             string query = @"
-            SELECT r.id_riwayat, u.username, r.tanggal, r.keluhan, r.hasil_rekomendasi
-            FROM Riwayat r
-            JOIN [User] u ON r.id_user = u.id_user
-            ORDER BY r.tanggal DESC
-            ";
+            SELECT *
+            FROM vwRiwayat
+            WHERE username=@u";
 
-            SqlDataAdapter da = new SqlDataAdapter(query, conn);
+            SqlDataAdapter da =
+            new SqlDataAdapter(query, conn);
+
+            da.SelectCommand.Parameters.AddWithValue(
+            "@u",
+            Form1.usernameLogin);
+
             DataTable dt = new DataTable();
+
             da.Fill(dt);
 
-            dataRiwayat.DataSource = dt; 
+            dataRiwayat.DataSource = dt;
         }
 
         public FormRiwayat()
@@ -88,5 +95,7 @@ namespace RsIndosiar
         {
             LoadRiwayat();
         }
+
+
     }
 }

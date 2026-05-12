@@ -65,11 +65,28 @@
     <Compile Include="FormDiagnosa.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FormObat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormObat.Designer.cs">
+      <DependentUpon>FormObat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormRegister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRegister.Designer.cs">
+      <DependentUpon>FormRegister.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormRiwayat.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RsIndosiarDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RsIndosiarDataSet.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
@@ -81,6 +98,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormDiagnosa.resx">
       <DependentUpon>FormDiagnosa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormObat.resx">
+      <DependentUpon>FormObat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRegister.resx">
+      <DependentUpon>FormRegister.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormRiwayat.resx">
       <DependentUpon>FormRiwayat.cs</DependentUpon>
@@ -103,6 +126,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="RsIndosiarDataSet.xsc">
+      <DependentUpon>RsIndosiarDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="RsIndosiarDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RsIndosiarDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RsIndosiarDataSet.xss">
+      <DependentUpon>RsIndosiarDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

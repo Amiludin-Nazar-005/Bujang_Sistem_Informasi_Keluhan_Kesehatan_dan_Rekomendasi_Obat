@@ -14,7 +14,7 @@ namespace RsIndosiar
 
         public FormDiagnosa()
         {
-            InitializeComponent(); 
+            InitializeComponent();
         }
 
         private void InitializeComponent()
@@ -24,7 +24,7 @@ namespace RsIndosiar
             this.txtKeluhan = new System.Windows.Forms.RichTextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtHasil = new System.Windows.Forms.TextBox();
+            this.rtHasil = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -52,6 +52,7 @@ namespace RsIndosiar
             this.txtKeluhan.Size = new System.Drawing.Size(292, 96);
             this.txtKeluhan.TabIndex = 2;
             this.txtKeluhan.Text = "";
+            this.txtKeluhan.TextChanged += new System.EventHandler(this.txtKeluhan_TextChanged);
             // 
             // button1
             // 
@@ -66,104 +67,147 @@ namespace RsIndosiar
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(228, 311);
+            this.label3.Location = new System.Drawing.Point(228, 354);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(38, 16);
             this.label3.TabIndex = 4;
             this.label3.Text = "Hasil";
             // 
-            // txtHasil
+            // rtHasil
             // 
-            this.txtHasil.Location = new System.Drawing.Point(338, 305);
-            this.txtHasil.Name = "txtHasil";
-            this.txtHasil.ReadOnly = true;
-            this.txtHasil.Size = new System.Drawing.Size(292, 22);
-            this.txtHasil.TabIndex = 5;
+            this.rtHasil.Location = new System.Drawing.Point(338, 282);
+            this.rtHasil.Name = "rtHasil";
+            this.rtHasil.Size = new System.Drawing.Size(301, 122);
+            this.rtHasil.TabIndex = 5;
+            this.rtHasil.Text = "";
             // 
             // FormDiagnosa
             // 
             this.ClientSize = new System.Drawing.Size(964, 470);
-            this.Controls.Add(this.txtHasil);
+            this.Controls.Add(this.rtHasil);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.txtKeluhan);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "FormDiagnosa";
+            this.Load += new System.EventHandler(this.FormDiagnosa_Load_1);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
+
+
+
         private Label label1;
         private Label label2;
         private RichTextBox txtKeluhan;
         private Button button1;
+        private RichTextBox rtHasil;
         private Label label3;
-        private TextBox txtHasil;
 
         private void button1_Click(object sender, EventArgs e)
         {
             SqlConnection conn = new SqlConnection(connStr);
+            conn.Open();
 
-            try
-            {
-                conn.Open();
+            string query = @"INSERT INTO Diagnosa
+                (username, keluhan, status)
 
-                string keluhan = txtKeluhan.Text.ToLower();
-                string hasil = "Tidak ditemukan rekomendasi"; 
+                VALUES
+                (@u, @k, 'Menunggu')";
 
-                // ambil data gejala + obat
-                string query = @"
-        SELECT g.nama_gejala, o.nama_obat
-        FROM Aturan_Diagnosa a
-        JOIN Gejala g ON a.id_gejala = g.id_gejala
-        JOIN Obat o ON a.id_obat_rekomendasi = o.id_obat
-        ";
+            SqlCommand cmd = new SqlCommand(query, conn);
 
-                SqlCommand cmd = new SqlCommand(query, conn);
-                SqlDataReader rd = cmd.ExecuteReader();
+            cmd.Parameters.AddWithValue("@u", Form1.usernameLogin);
+            cmd.Parameters.AddWithValue("@k", txtKeluhan.Text);
 
-                while (rd.Read())
-                {
-                    string gejala = rd["nama_gejala"].ToString().ToLower();
-                    string obat = rd["nama_obat"].ToString();
+            cmd.ExecuteNonQuery();
 
-                    // cek apakah keluhan mengandung gejala
-                    if (keluhan.Contains(gejala))
-                    {
-                        hasil = "Disarankan: " + obat; 
-                        break;
-                    }
-                }
+            MessageBox.Show("Keluhan berhasil dikirim!");
 
-                rd.Close();
-
-                txtHasil.Text = hasil;
-
-                // simpan ke riwayat
-                string insert = @"
-        INSERT INTO Riwayat (id_user, keluhan, hasil_rekomendasi)
-        VALUES (@id_user, @keluhan, @hasil)
-        ";
-
-                SqlCommand cmdInsert = new SqlCommand(insert, conn);
-                cmdInsert.Parameters.AddWithValue("@id_user", 1); // sementara pakai user id 1
-                cmdInsert.Parameters.AddWithValue("@keluhan", keluhan);
-                cmdInsert.Parameters.AddWithValue("@hasil", hasil);
-
-                cmdInsert.ExecuteNonQuery();
-
-                MessageBox.Show("Diagnosa selesai!");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                conn.Close();
-            }
+            conn.Close();
         }
+
+        private void txtKeluhan_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+        private void LoadObat()
+        {
+
+        }
+
+        private void FormDiagnosa_Load_1(object sender, EventArgs e)
+        {
+            LoadObat();
+            LoadHasil();
+            MessageBox.Show(Form1.usernameLogin);
+        }
+
+        private void LoadHasil()
+        {
+            SqlConnection conn =
+            new SqlConnection(connStr);
+
+            conn.Open();
+
+            string query = @"
+            SELECT TOP 1
+            keluhan,
+            hasil_diagnosa,
+            obat,
+            status,
+            tanggal
+            FROM Diagnosa
+            WHERE username=@u
+            ORDER BY id_diagnosa DESC";
+
+            SqlCommand cmd =
+            new SqlCommand(query, conn);
+
+            cmd.Parameters.AddWithValue(
+            "@u",
+            Form1.usernameLogin);
+
+            SqlDataReader rd =
+            cmd.ExecuteReader();
+
+            if (rd.Read())
+            {
+                rtHasil.Text =
+                "Keluhan : " +
+                rd["keluhan"].ToString()
+
+                + Environment.NewLine +
+                Environment.NewLine +
+
+                "Hasil Diagnosa : " +
+                rd["hasil_diagnosa"].ToString()
+
+                + Environment.NewLine +
+                Environment.NewLine +
+
+                "Obat : " +
+                rd["obat"].ToString()
+
+                + Environment.NewLine +
+                Environment.NewLine +
+
+                "Status : " +
+                rd["status"].ToString()
+
+                + Environment.NewLine +
+                Environment.NewLine +
+
+                "Tanggal : " +
+                rd["tanggal"].ToString();
+            }
+
+            conn.Close();
+        }
+
+
     }
 }
