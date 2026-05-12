@@ -83,7 +83,7 @@ namespace RsIndosiar
             da.Fill(dt);
 
             dataRiwayat.DataSource = dt;
-        }
+        } 
 
         public FormRiwayat()
         {
