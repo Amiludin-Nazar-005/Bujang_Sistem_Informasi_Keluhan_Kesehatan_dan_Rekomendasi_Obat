@@ -121,7 +121,7 @@ namespace RsIndosiar
             Form1 login = new Form1();
             login.Show();
 
-            this.Close();
+            this.Close(); 
         }
 
         private void btnObat_Click(object sender, EventArgs e)
