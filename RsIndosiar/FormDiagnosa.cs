@@ -205,7 +205,7 @@ namespace RsIndosiar
                 rd["tanggal"].ToString();
             }
 
-            conn.Close();
+            conn.Close(); 
         }
 
 
