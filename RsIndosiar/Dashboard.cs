@@ -108,7 +108,7 @@ namespace RsIndosiar
         private void btnRiwayat_Click(object sender, EventArgs e)
         {
             FormRiwayat f = new FormRiwayat();
-            f.Show();
+            f.Show(); 
         }
 
         private void Dashboard_Load(object sender, EventArgs e)
