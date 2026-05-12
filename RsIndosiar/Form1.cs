@@ -34,7 +34,7 @@ namespace RsIndosiar
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            SqlConnection conn = new SqlConnection(connStr);
+            SqlConnection conn = new SqlConnection(connStr); 
             conn.Open();
 
             SqlCommand cmd =
