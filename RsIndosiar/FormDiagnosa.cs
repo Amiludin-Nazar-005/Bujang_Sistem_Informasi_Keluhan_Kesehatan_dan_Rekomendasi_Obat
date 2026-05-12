@@ -128,7 +128,7 @@ namespace RsIndosiar
             MessageBox.Show("Keluhan berhasil dikirim!");
 
             conn.Close();
-        }
+        } 
 
         private void txtKeluhan_TextChanged(object sender, EventArgs e)
         {
