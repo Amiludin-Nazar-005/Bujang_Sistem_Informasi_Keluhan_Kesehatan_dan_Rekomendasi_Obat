@@ -618,7 +618,7 @@ namespace RsIndosiar
                 row.Cells["obat"].Value.ToString();
 
                 MessageBox.Show(idDiagnosa.ToString());
-            }
+            } 
         }
 
         private void btnKonfirmasi_Click(object sender, EventArgs e)
