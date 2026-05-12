@@ -98,7 +98,7 @@ namespace RsIndosiar
             FormRegister f = new FormRegister();
             f.Show();
 
-            this.Hide();
+            this.Hide(); 
 
         }
 
