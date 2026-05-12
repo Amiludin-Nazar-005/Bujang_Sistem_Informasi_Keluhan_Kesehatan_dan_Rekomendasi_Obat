@@ -599,7 +599,7 @@ namespace RsIndosiar
             Form1 login = new Form1();
             login.Show();
 
-            this.Close();
+            this.Close(); 
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
