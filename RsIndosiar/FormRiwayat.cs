@@ -11,8 +11,11 @@ namespace RsIndosiar
 { 
     class FormRiwayat : Form
     {
-        string connStr = "Data Source=DIAN\\NAZARIN;Initial Catalog=RsIndosiar;Integrated Security=True";
-
+        static string connStr =
+        @"Data Source=10.39.198.11,1433;
+Initial Catalog=RsIndosiar;
+User ID=rsuser;
+Password=123;";
         private void InitializeComponent()
         {
             this.btnRefresh = new System.Windows.Forms.Button();
@@ -22,7 +25,7 @@ namespace RsIndosiar
             // 
             // btnRefresh
             // 
-            this.btnRefresh.Location = new System.Drawing.Point(400, 267);
+            this.btnRefresh.Location = new System.Drawing.Point(403, 406);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(116, 42);
             this.btnRefresh.TabIndex = 0;
@@ -32,12 +35,13 @@ namespace RsIndosiar
             // 
             // dataRiwayat
             // 
+            this.dataRiwayat.BackgroundColor = System.Drawing.Color.White;
             this.dataRiwayat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataRiwayat.Location = new System.Drawing.Point(77, 42);
             this.dataRiwayat.Name = "dataRiwayat";
             this.dataRiwayat.RowHeadersWidth = 51;
             this.dataRiwayat.RowTemplate.Height = 24;
-            this.dataRiwayat.Size = new System.Drawing.Size(762, 150);
+            this.dataRiwayat.Size = new System.Drawing.Size(762, 335);
             this.dataRiwayat.TabIndex = 1;
             // 
             // FormRiwayat
@@ -66,24 +70,44 @@ namespace RsIndosiar
             SqlConnection conn =
             new SqlConnection(connStr);
 
+
             string query = @"
-            SELECT *
-            FROM vwRiwayat
-            WHERE username=@u";
+    SELECT
+        username,
+        keluhan,
+        hasil_diagnosa,
+        obat,
+        status,
+        tanggal
+
+    FROM Diagnosa
+
+    WHERE username=@u";
+
+
 
             SqlDataAdapter da =
             new SqlDataAdapter(query, conn);
+
+
 
             da.SelectCommand.Parameters.AddWithValue(
             "@u",
             Form1.usernameLogin);
 
-            DataTable dt = new DataTable();
+
+
+            DataTable dt =
+            new DataTable();
+
+
 
             da.Fill(dt);
 
+
+
             dataRiwayat.DataSource = dt;
-        } 
+        }
 
         public FormRiwayat()
         {

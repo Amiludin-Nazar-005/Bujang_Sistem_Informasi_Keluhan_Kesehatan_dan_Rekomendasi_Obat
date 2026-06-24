@@ -46,7 +46,7 @@
             this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label2.Font = new System.Drawing.Font("Mongolian Baiti", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(87, 118);
+            this.label2.Location = new System.Drawing.Point(128, 117);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(95, 18);
             this.label2.TabIndex = 1;
@@ -58,7 +58,7 @@
             this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label3.Font = new System.Drawing.Font("Mongolian Baiti", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(86, 193);
+            this.label3.Location = new System.Drawing.Point(127, 185);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(86, 19);
             this.label3.TabIndex = 2;
@@ -66,9 +66,9 @@
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(90, 268);
+            this.btnLogin.Location = new System.Drawing.Point(121, 272);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(92, 23);
+            this.btnLogin.Size = new System.Drawing.Size(113, 28);
             this.btnLogin.TabIndex = 3;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = true;
@@ -77,25 +77,25 @@
             // txtUsername
             // 
             this.txtUsername.BackColor = System.Drawing.Color.Silver;
-            this.txtUsername.Location = new System.Drawing.Point(42, 151);
+            this.txtUsername.Location = new System.Drawing.Point(81, 147);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(181, 22);
+            this.txtUsername.Size = new System.Drawing.Size(190, 22);
             this.txtUsername.TabIndex = 4;
             this.txtUsername.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // txtPassword
             // 
             this.txtPassword.BackColor = System.Drawing.Color.Silver;
-            this.txtPassword.Location = new System.Drawing.Point(42, 225);
+            this.txtPassword.Location = new System.Drawing.Point(81, 220);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(181, 22);
+            this.txtPassword.Size = new System.Drawing.Size(190, 22);
             this.txtPassword.TabIndex = 5;
             // 
             // btnSignIn
             // 
-            this.btnSignIn.Location = new System.Drawing.Point(90, 306);
+            this.btnSignIn.Location = new System.Drawing.Point(121, 321);
             this.btnSignIn.Name = "btnSignIn";
-            this.btnSignIn.Size = new System.Drawing.Size(92, 23);
+            this.btnSignIn.Size = new System.Drawing.Size(112, 28);
             this.btnSignIn.TabIndex = 6;
             this.btnSignIn.Text = "SignIn";
             this.btnSignIn.UseVisualStyleBackColor = true;
@@ -111,9 +111,9 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.btnLogin);
             this.panel1.Controls.Add(this.txtPassword);
-            this.panel1.Location = new System.Drawing.Point(438, 48);
+            this.panel1.Location = new System.Drawing.Point(523, 57);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(274, 362);
+            this.panel1.Size = new System.Drawing.Size(338, 426);
             this.panel1.TabIndex = 7;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -122,11 +122,12 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Mongolian Baiti", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(74, 35);
+            this.label4.Location = new System.Drawing.Point(111, 33);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(123, 48);
             this.label4.TabIndex = 7;
             this.label4.Text = "SELEMAT\r\n DATANG";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // Form1
             // 
@@ -135,7 +136,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(985, 559);
             this.Controls.Add(this.panel1);
             this.Name = "Form1";
             this.Text = "Form1";

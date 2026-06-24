@@ -11,7 +11,11 @@ namespace RsIndosiar
 
     public partial class Dashboard : Form
     {
-        string connStr = "Data Source=DIAN\\NAZARIN;Initial Catalog=RsIndosiar;Integrated Security=True"; 
+        static string connStr =
+        @"Data Source=10.39.198.11,1433;
+Initial Catalog=RsIndosiar;
+User ID=rsuser;
+Password=123;";
 
 
         private Button btnDiagnosa; 
@@ -31,7 +35,7 @@ namespace RsIndosiar
             // 
             // btnDiagnosa
             // 
-            this.btnDiagnosa.Location = new System.Drawing.Point(97, 199);
+            this.btnDiagnosa.Location = new System.Drawing.Point(56, 129);
             this.btnDiagnosa.Name = "btnDiagnosa";
             this.btnDiagnosa.Size = new System.Drawing.Size(169, 36);
             this.btnDiagnosa.TabIndex = 0;
@@ -41,7 +45,7 @@ namespace RsIndosiar
             // 
             // btnRiwayat
             // 
-            this.btnRiwayat.Location = new System.Drawing.Point(558, 199);
+            this.btnRiwayat.Location = new System.Drawing.Point(466, 339);
             this.btnRiwayat.Name = "btnRiwayat";
             this.btnRiwayat.Size = new System.Drawing.Size(170, 36);
             this.btnRiwayat.TabIndex = 1;
@@ -52,17 +56,19 @@ namespace RsIndosiar
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(234, 76);
+            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(97, 40);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(369, 16);
+            this.label1.Size = new System.Drawing.Size(601, 27);
             this.label1.TabIndex = 2;
             this.label1.Text = "Sistem Informasi Keluhan Kesehatan dan Rekomendasi Obat";
             // 
             // btnLogout
             // 
-            this.btnLogout.Location = new System.Drawing.Point(738, 12);
+            this.btnLogout.Location = new System.Drawing.Point(706, 442);
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(75, 23);
+            this.btnLogout.Size = new System.Drawing.Size(98, 36);
             this.btnLogout.TabIndex = 3;
             this.btnLogout.Text = "Logout";
             this.btnLogout.UseVisualStyleBackColor = true;
@@ -70,7 +76,7 @@ namespace RsIndosiar
             // 
             // btnObat
             // 
-            this.btnObat.Location = new System.Drawing.Point(333, 199);
+            this.btnObat.Location = new System.Drawing.Point(262, 242);
             this.btnObat.Name = "btnObat";
             this.btnObat.Size = new System.Drawing.Size(170, 36);
             this.btnObat.TabIndex = 4;
@@ -80,6 +86,8 @@ namespace RsIndosiar
             // 
             // Dashboard
             // 
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(825, 490);
             this.Controls.Add(this.btnObat);
             this.Controls.Add(this.btnLogout);

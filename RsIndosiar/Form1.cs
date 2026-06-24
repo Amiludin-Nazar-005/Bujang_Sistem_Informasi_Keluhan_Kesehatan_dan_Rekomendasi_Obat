@@ -16,8 +16,11 @@ namespace RsIndosiar
     public partial class Form1 : Form
     {
 
-        string connStr = "Data Source=DIAN\\NAZARIN;Initial Catalog=RsIndosiar;Integrated Security=True";
-
+        static string connStr =
+        @"Data Source=10.39.198.11,1433;
+Initial Catalog=RsIndosiar;
+User ID=rsuser;
+Password=123;";
         public static string usernameLogin = "";
         public Form1()
         {
@@ -112,6 +115,11 @@ namespace RsIndosiar
             MessageBox.Show(Form1.usernameLogin);
 
             SqlConnection conn = new SqlConnection(connStr);
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

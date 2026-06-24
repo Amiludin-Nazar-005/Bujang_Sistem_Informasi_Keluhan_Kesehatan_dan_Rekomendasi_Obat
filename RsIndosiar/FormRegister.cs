@@ -13,8 +13,11 @@ namespace RsIndosiar
 {
     public partial class FormRegister: Form
     {
-        string connStr = "Data Source=DIAN\\NAZARIN;Initial Catalog=RsIndosiar;Integrated Security=True";
-
+        static string connStr =
+        @"Data Source=10.39.198.11,1433;
+Initial Catalog=RsIndosiar;
+User ID=rsuser;
+Password=123;";
         public FormRegister()
         {
             InitializeComponent();
